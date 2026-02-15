@@ -1,0 +1,17 @@
+---
+const {years, description, company} = Astro.props 
+---
+<div>
+      <div>
+        <p>
+          <span>{years.start} - {years.end}</span>
+          {company.name} - {company.role} 
+        <p>
+      </div>
+      <div>
+        <p>
+          {description}
+        </p>
+      </div>
+    </div>
+

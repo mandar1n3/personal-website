@@ -1,11 +1,69 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import ContactForm from "../components/ContactForm.astro";
+import data from "../data.json";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "Arno Volts";
+
+
+const experiences = data.experiences;
 ---
 
-<Layout>
-	<Welcome />
+<Layout {pageTitle}>
+  <Navigation />
+
+  <header>
+    <h1>
+      <span>Arno Volts</span>
+      <span>Junior Web Developer</span>
+    </h1>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur 
+      odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit 
+      dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue ultricies, 
+      cursus ex vitae, placerat neque. Integer ut dui nunc.
+    </p>
+  </header>
+
+  <section>
+    <h2>The Journey So Far</h2>
+
+    {
+      experiences.map(
+      (exp) => <ExperienceCard years={exp.years} company={exp.company} description={exp.description}/>
+      )
+    }
+  </section>
+
+  <section>
+    <h2>A little About Me </h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur 
+      odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit 
+      dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue ultricies, 
+      cursus ex vitae, placerat neque. Integer ut dui nunc.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur 
+      odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit 
+      dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue ultricies, 
+      cursus ex vitae, placerat neque. Integer ut dui nunc.
+    </p>
+  </section>
+
+  <section>
+    <h2>Send Me A Message</h2>
+    <div>
+      <ContactForm />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque 
+        sed nisi sed urna convallis facilisis. Nulla at aliquet magna. Proin 
+        nec leo id ipsum tincidunt eleifend.
+      </p>
+    </div>
+  </section>
 </Layout>

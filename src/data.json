@@ -1,0 +1,26 @@
+{
+  "experiences": [
+    {
+      "company": {
+        "name": "Hrmano",
+        "role": "Junior Full Stack Web Developer"
+      },
+      "years": {
+        "start": 2023,
+        "end": 2025
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nisi sed urna convallis facilisis. Nulla at aliquet magna. Proin nec leo id ipsum tincidunt eleifend. Maecenas placerat scelerisque vulputate. Fusce maximus, neque sed bibendum vehicula, risus quam accumsan elit, quis pulvinar eros quam ut purus."
+    },
+    {
+      "company": {
+        "name": "Becode",
+        "role": "Full Stack Web Developer Training"
+      },
+      "years": {
+        "start": 2022,
+        "end": 2023
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nisi sed urna convallis facilisis. Nulla at aliquet magna. Proin nec leo id ipsum tincidunt eleifend. Maecenas placerat scelerisque vulputate. Fusce maximus, neque sed bibendum vehicula, risus quam accumsan elit, quis pulvinar eros quam ut purus."
+    }
+  ]
+}
