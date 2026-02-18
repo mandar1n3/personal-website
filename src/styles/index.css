@@ -1,0 +1,13 @@
+/* For testing the fonts */
+body {
+    font-family:  "Fira code",  monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family:  'Playfair Disaplay', serif;
+}
