@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import ContactForm from "../components/ContactForm.astro";
-import data from "../data.json";
+import * as data from "../data.json";
 
 const pageTitle = "Arno Volts";
 
@@ -14,17 +14,19 @@ const experiences = data.experiences;
   <Navigation />
 
   <header>
-    <h1>
-      <span>Arno Volts</span>
-      <span>Junior Web Developer</span>
-    </h1>
+    <div>
+      <h1 class="main-heading">
+        <span class="main-heading--large">Arno Volts</span>
+        <span class="main-heading--regular">Junior Web Developer</span>
+      </h1>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur
-      odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit
-      dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue
-      ultricies, cursus ex vitae, placerat neque. Integer ut dui nunc.
-    </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur
+        odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit
+        dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue
+        ultricies, cursus ex vitae, placerat neque. Integer ut dui nunc.
+      </p>
+    </div>
   </header>
 
   <section>

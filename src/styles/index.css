@@ -1,6 +1,23 @@
-/* For testing the fonts */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background-color:  #E5E5E5;
+}
+
 body {
-    font-family:  "Fira code",  monospace;
+    font-family:  var(--font-fira-code),  monospace;
+    height: inherit;
+    width: 90%;
+    max-width:  70rem;
+    margin: 0 auto;
+
 }
 
 h1,
@@ -9,5 +26,38 @@ h3,
 h4,
 h5,
 h6 {
-    font-family:  'Playfair Display', serif;
+    font-family:  var(--font-playfair-display), sans-serif;
+    padding-bottom:  .8em;
+}
+
+section {
+    margin: 3.8em 0;
+}
+
+.main-nav {
+    margin-left: auto;
+    width: fit-content;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+}
+.main-nav  > a{
+    text-decoration:  none;
+    color:  black;
+    font-size:  1.3rem;
+}
+
+.main-heading {
+    display: flex;
+    flex-direction: column;;
+}
+
+.main-heading--large {
+    font-size:  4rem;
+}
+
+.main-heading--regular {
+    font-size: 1.4rem;
+    font-family:  var(--font-fira-code);
+    padding-bottom: 0.9em;
 }

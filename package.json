@@ -11,7 +11,7 @@
   "dependencies": {
     "@fontsource-variable/fira-code": "^5.2.7",
     "@fontsource-variable/playfair-display": "^5.2.8",
-    "astro": "^5.17.1"
+    "astro": "^6.1.8"
   },
   "devDependencies": {
     "prettier": "3.8.1",
