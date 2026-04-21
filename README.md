@@ -2,7 +2,7 @@
 
 > Currently under development        
 
-A web site used to provide an overview of my professional career as developer 
-and share some projects I have/am working on.
+A website created to provide an overview of my professional experience 
+as a developer and to showcase current and completed projects.
 
 Built with [AstroJS](https://astro.build/)
