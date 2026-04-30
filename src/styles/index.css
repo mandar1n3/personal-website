@@ -1,9 +1,11 @@
+/* || Reset rules */
 *,
 *::before,
 *::after{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -30,8 +32,10 @@ h6 {
     padding-bottom:  .8em;
 }
 
-section {
-    margin: 3.8em 0;
+/* || General rules */
+
+.main-section > section {
+  margin: 3.8em 0;
 }
 
 .main-nav {
@@ -41,7 +45,12 @@ section {
     position: sticky;
     top: 0;
 }
-.main-nav  > a{
+
+.main-nav {
+  background-color: #E5E5E5;
+}
+
+.main-nav  > a {
     text-decoration:  none;
     color:  black;
     font-size:  1.3rem;
@@ -61,3 +70,11 @@ section {
     font-family:  var(--font-fira-code);
     padding-bottom: 0.9em;
 }
+
+/* || Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+

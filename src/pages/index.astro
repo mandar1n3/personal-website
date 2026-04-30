@@ -28,47 +28,48 @@ const experiences = data.experiences;
       </p>
     </div>
   </header>
+  <div class="main-section">
+    <section>
+      <h2>The Journey So Far</h2>
 
-  <section>
-    <h2>The Journey So Far</h2>
+      {
+        experiences.map((exp) => (
+          <ExperienceCard
+            years={exp.years}
+            company={exp.company}
+            description={exp.description}
+          />
+        ))
+      }
+    </section>
 
-    {
-      experiences.map((exp) => (
-        <ExperienceCard
-          years={exp.years}
-          company={exp.company}
-          description={exp.description}
-        />
-      ))
-    }
-  </section>
-
-  <section>
-    <h2>A little About Me</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur
-      odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit
-      dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue
-      ultricies, cursus ex vitae, placerat neque. Integer ut dui nunc.
-    </p>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur
-      odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit
-      dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue
-      ultricies, cursus ex vitae, placerat neque. Integer ut dui nunc.
-    </p>
-  </section>
-
-  <section>
-    <h2>Send Me A Message</h2>
-    <div>
-      <ContactForm />
+    <section id="about">
+      <h2>A little About Me</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        sed nisi sed urna convallis facilisis. Nulla at aliquet magna. Proin nec
-        leo id ipsum tincidunt eleifend.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur
+        odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit
+        dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue
+        ultricies, cursus ex vitae, placerat neque. Integer ut dui nunc.
       </p>
-    </div>
-  </section>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur
+        odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit
+        dolor. Phasellus eu odio ut sem aliquam faucibus. Mauris id augue
+        ultricies, cursus ex vitae, placerat neque. Integer ut dui nunc.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Send Me A Message</h2>
+      <div class="main-section-contact-form">
+        <ContactForm />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          sed nisi sed urna convallis facilisis. Nulla at aliquet magna. Proin nec
+          leo id ipsum tincidunt eleifend.
+        </p>
+      </div>
+    </section>
+  </div>
 </Layout>
