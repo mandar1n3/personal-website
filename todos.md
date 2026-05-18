@@ -1,4 +1,5 @@
-- [ ] Fix menu not displaying when scrolling on lower sections
+- [x] Refactor css
+- [x] Fix menu not displaying when scrolling on lower sections
 - [ ] Make menu responisive on mobile
 - [ ] Style the form section
 - [ ] Handle form submtion
