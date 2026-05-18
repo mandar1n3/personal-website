@@ -12,8 +12,8 @@ const experiences = data.experiences;
 
 <Layout {pageTitle}>
 
+  <Navigation />
   <header class="main-header">
-    <Navigation />
     <div class="main-header-body">
       <h1 class="heading">
         <span>Arno Volts</span>
@@ -29,8 +29,8 @@ const experiences = data.experiences;
     </div>
   </header>
   <main>
-    <section>
-      <h2>The Journey So Far</h2>
+    <section class="home-section">
+      <h2 class="home-section-heading">The Journey So Far</h2>
 
       {
         experiences.map((exp) => (
@@ -43,8 +43,8 @@ const experiences = data.experiences;
       }
     </section>
 
-    <section id="about">
-      <h2>A little About Me</h2>
+    <section class="home-section"id="about">
+      <h2 class="home-section-heading">A little About Me</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a efficitur
         odio, a ultricies orci. Praesent sit amet vulputate justo, a hendrerit
@@ -60,8 +60,8 @@ const experiences = data.experiences;
       </p>
     </section>
 
-    <section id="contact">
-      <h2>Send Me A Message</h2>
+    <section class="home-section" id="contact">
+      <h2 class="home-section-heading">Send Me A Message</h2>
       <div>
         <ContactForm />
         <p>
