@@ -6,7 +6,8 @@
   /* Typography scale */
   --scale: var(--golden-ratio);
 
-  --x-smal: calc(1em * pow(var(--scale), -0.5));
+  --xx-small: calc(1em * pow(var(--scale), -0.5));
+  --x-small: calc(1em * pow(var(--scale), -0.25));
   --small: calc(1em * pow(var(--scale), -0.125));
   --medium: 1em;
   --large: calc(1em * pow(var(--scale), 1));
@@ -35,6 +36,8 @@ body {
   margin: 0;
   min-height: 100vh;
   line-height: 1.5;
+  background: #1E1E1E;
+  color: #D9D9D9;
 }
 
 body, h1, h2, h3, h4, p,
@@ -50,6 +53,7 @@ button, input, label {
 h1, h2,
 h3, h4 {
   text-wrap: balance;
+  font-family: var(--font-family-heading);
 }
 
 p, li, figcaption {
@@ -73,3 +77,26 @@ textarea:not([rows]) {
   min-height: 10em
 }
 
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* || Main Header */
+.main-header {
+  .main-header-body{
+    
+  }
+  .heading {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--xx-large);
+
+    .sub-heading {
+      font-family: var(--font-family-base);
+      /* font-size: clamp(1em, 12px + .1vw, 1.25em); */
+      font-size: 26px;
+    }
+  }
+}

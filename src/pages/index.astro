@@ -11,13 +11,13 @@ const experiences = data.experiences;
 ---
 
 <Layout {pageTitle}>
-  <Navigation />
 
-  <header>
-    <div>
-      <h1>
+  <header class="main-header">
+    <Navigation />
+    <div class="main-header-body">
+      <h1 class="heading">
         <span>Arno Volts</span>
-        <span>Junior Web Developer</span>
+        <span class="sub-heading">Junior Web Developer</span>
       </h1>
 
       <p>
@@ -28,7 +28,7 @@ const experiences = data.experiences;
       </p>
     </div>
   </header>
-  <div>
+  <main>
     <section>
       <h2>The Journey So Far</h2>
 
@@ -71,5 +71,5 @@ const experiences = data.experiences;
         </p>
       </div>
     </section>
-  </div>
+  </main>
 </Layout>
