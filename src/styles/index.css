@@ -2,6 +2,19 @@
 :root {
   --font-family-base: var(--font-fira-code), monospace;
   --font-family-heading: var(--font-playfair-display), serif;
+
+  /* Typography scale */
+  --scale: var(--golden-ratio);
+
+  --x-smal: calc(1em * pow(var(--scale), -0.5));
+  --small: calc(1em * pow(var(--scale), -0.125));
+  --medium: 1em;
+  --large: calc(1em * pow(var(--scale), 1));
+  --x-large: calc(1em * pow(var(--scale), 2));
+  --xx-large: calc(1em * pow(var(--scale), 3));
+  --xxx-large: calc(1em * pow(var(--scale), 4));
+
+  --golden-ratio: calc((1 + sqrt(5)) / 2);
 }
 
 *,
@@ -15,6 +28,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  font-family: var(--font-family-base);
 }
 
 body {
