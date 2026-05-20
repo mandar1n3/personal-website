@@ -9,8 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource-variable/fira-code": "^5.2.7",
-    "@fontsource-variable/playfair-display": "^5.2.8",
     "astro": "^6.1.8"
   },
   "devDependencies": {
