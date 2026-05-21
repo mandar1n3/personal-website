@@ -141,7 +141,6 @@ textarea:not([rows]) {
 
   .experience-card-body {
     font-size: var(--small);
-    line-height: 1.7;
   }
 }
 
