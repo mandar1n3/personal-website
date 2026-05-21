@@ -5,6 +5,7 @@
   /* Typography scale */
   --scale: var(--golden-ratio);
 
+  --xxx-small: calc(1em * pow(var(--scale), -0.75));
   --xx-small: calc(1em * pow(var(--scale), -0.5));
   --x-small: calc(1em * pow(var(--scale), -0.25));
   --small: calc(1em * pow(var(--scale), -0.125));
@@ -36,11 +37,8 @@ body {
   margin: 0;
   min-height: 100vh;
   line-height: 1.5;
-  background: #1E1E1E;
-  color: #D9D9D9;
-  max-width: 70em;
-  padding: 2em;
-  margin: 0 auto;
+  background: #E5E5E5;
+  color: #1E1E1E;
 }
 
 body, h1, h2, h3, h4, p,
@@ -80,40 +78,48 @@ textarea:not([rows]) {
 }
 
 .wrapper {
-  /* height: 100vh; */
   display: grid;
   grid-template-rows: auto auto 1fr auto;
+
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 0 2em;
 }
 
 /* || Main Nav */
 .main-nav {
-  position: sticky;
-  top: 0;
-  padding: .8em;
-  width: fit-content;
   margin-left: auto;
-  background: #1E1E1E;
-  font-size: clamp(1em, var(--large), 1.25em);
+  background: #E5E5E5;
+  font-size: 1.125em;
+
+  ul {
+    display: flex;
+    gap: .8em;
+  }
 
   a {
-    color: #D9D9D9;
+    color: #1E1E1E;
+    text-decoration: none;
+  }
+  a:hover {
+    font-weight: bold;
   }
 }
 
 
 /* || Main Header */
 .main-header {
-  padding-bottom: 3em;
+  padding-bottom: 2em;
 
   .heading {
     display: flex;
     flex-direction: column;
-    font-size: var(--xx-large);
     gap: .18em;
     margin-block-end: .8em;
 
     .sub-heading {
-      font-size: 26px;
+      font-size: var(--xx-small);
+      font-weight: 400;
     }
   }
 }
@@ -122,7 +128,60 @@ textarea:not([rows]) {
 
 .home-section {
   .home-section-heading {
-    margin-block-end: 1.5em;
+    font-size: var(--large);
+    margin-block-end: 1em;
   }
-  padding-bottom: 3em;
+  padding-bottom: 2em;
+}
+
+.experience-card{
+  .experience-card-header {
+    font-weight: 600;
+  }
+
+  .experience-card-body {
+    font-size: var(--small);
+    line-height: 1.7;
+  }
+}
+
+.experience-card + .experience-card {
+  margin-top: 2em;
+}
+
+.contact-section {
+  p {
+    padding-bottom: 1.5em;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: .8em;
+
+  input {
+    padding: .3em;
+  }
+
+  .contact-form-submit-btn {
+    align-self: self-start;
+    padding: .8em 2em;
+    border-radius: unset;
+    background: #1E1E1E;
+    color: #E5E5E5;
+    cursor: pointer;
+  }
+
+  .contact-form-submit-btn:hover {
+    color: #1E1E1E;
+    background: #E5E5E5;
+  }
+}
+
+.main-footer {
+  padding: 1em 0;
+  font-size: var(--small);
+  text-align: center;
+  background: #D9D9D9;
 }

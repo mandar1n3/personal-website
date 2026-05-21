@@ -2,14 +2,14 @@
 const { years, description, company } = Astro.props;
 ---
 
-<div>
-  <div>
+<div class="experience-card">
+  <div class="experience-card-header">
     <p>
-      <span>{years.start} - {years.end}</span>
+      <span class="text-bold">{years.start} - {years.end}</span>
       {company.name} - {company.role}
     </p>
   </div>
-  <div>
+  <div class="experience-card-body">
     <p>
       {description}
     </p>
