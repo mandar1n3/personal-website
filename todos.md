@@ -1,7 +1,6 @@
 - [x] Refactor css
-- [x] Fix menu not displaying when scrolling on lower sections
-- [ ] Make menu responisive on mobile
-- [ ] Style the form section
-- [ ] Handle form submtion
+- [x] Style the form section
+- [ ] Add breakpoints for desktop
+- [ ] Handle form submition
 - [ ] Write copy for the website
 - [ ] publish website
