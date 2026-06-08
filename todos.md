@@ -1,6 +1,6 @@
 - [x] Refactor css
 - [x] Style the form section
-- [ ] Add breakpoints for desktop
-- [ ] Handle form submition
+- [x] Add breakpoints for desktop
 - [ ] Write copy for the website
+- [ ] Handle form submition
 - [ ] publish website
