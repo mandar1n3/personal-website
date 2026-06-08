@@ -176,7 +176,26 @@ textarea:not([rows]) {
     color: #1E1E1E;
     background: #E5E5E5;
   }
+
 }
+  @media (min-width: 50rem) {
+    .contact-section {
+      display: grid;
+      grid-template-areas:"form p";
+      grid-template-columns: 1fr 1fr;
+      gap: .8em;
+
+      p {
+        padding-bottom: unset;
+        margin: 0;
+        grid-area: p;
+      }
+      .contact-form {
+        grid-area: form;
+      }
+    }
+  }
+
 
 .main-footer {
   padding: 1em 0;
