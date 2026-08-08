@@ -180,19 +180,19 @@ textarea:not([rows]) {
 }
   @media (min-width: 50rem) {
     .contact-section {
-      display: grid;
-      grid-template-areas:"form p";
-      grid-template-columns: 1fr 1fr;
-      gap: .8em;
+      /* display: grid; */
+      /* grid-template-areas:"form p"; */
+      /* grid-template-columns: 1fr 1fr; */
+      /* gap: .8em; */ */
 
       p {
         padding-bottom: unset;
         margin: 0;
         grid-area: p;
       }
-      .contact-form {
-        grid-area: form;
-      }
+      /* .contact-form { */
+      /*   grid-area: form; */
+      /* } */
     }
   }
 
