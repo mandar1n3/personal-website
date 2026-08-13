@@ -183,7 +183,7 @@ textarea:not([rows]) {
       /* display: grid; */
       /* grid-template-areas:"form p"; */
       /* grid-template-columns: 1fr 1fr; */
-      /* gap: .8em; */ */
+      /* gap: .8em; */
 
       p {
         padding-bottom: unset;
