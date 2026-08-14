@@ -4,7 +4,7 @@
 
 A website created to provide an overview of my professional experience 
 as a developer and to showcase completed projects. You can visite the site
-[@arnovolts.be](arnovolts.be)
+[@arnovolts.be](https://arnovolts.be)
 
 # Stack
 
