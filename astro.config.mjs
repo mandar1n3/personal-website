@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,5 +10,6 @@ export default defineConfig({
       name: "Inter",
       cssVariable: "--font-inter",
     }
-  ]
+  ],
+  adapter: cloudflare(),
 });

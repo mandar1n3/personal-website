@@ -1,15 +1,27 @@
-<form class="contact-form">
+<form class="contact-form" id="contact-form">
   <label for="name"> Name </label>
   <input id="name" type="text" name="name" required />
 
   <label for="email"> Email </label>
   <input id="email" type="email" name="email" required />
 
-  <label for="subject"> Subject </label>
-  <input id="subject" type="text" name="subject" required />
+  <!-- <label for="subject"> Subject </label> -->
+  <!-- <input id="subject" type="text" name="subject" required /> -->
 
-  <label for="message"> Message </label>
-  <textarea id="message" name="message" required> </textarea>
+  <!-- <label for="message"> Message </label> -->
+  <!-- <textarea id="message" name="message" required> </textarea> -->
 
   <button class="contact-form-submit-btn" type="submit">Send</button>
 </form>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const form = document.querySelector("#contact-form") as HTMLFormElement;
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const { data, error } = await actions.contactForm(formData);
+    console.log(data, error);
+  });
+</script>
