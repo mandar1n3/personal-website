@@ -186,9 +186,9 @@ textarea:not([rows]) {
       /* gap: .8em; */
 
       p {
-        padding-bottom: unset;
-        margin: 0;
-        grid-area: p;
+        /* padding-bottom: unset; */
+        /* margin: 0; */
+        /* grid-area: p; */
       }
       /* .contact-form { */
       /*   grid-area: form; */
@@ -203,3 +203,25 @@ textarea:not([rows]) {
   text-align: center;
   background: #D9D9D9;
 }
+
+/* // utility classes */ 
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+
+  div::lastchild[id=*-error] {
+    display: none;
+  }
+}
+.message-error {
+  padding: .8em;
+  background-color: oklch(88.5% 0.062 18.334);
+  display: block;
+  border-left: .3em solid oklch(57.7% 0.245 27.325);
+  font-size: var(--xx-small)
+}
+
+

@@ -1,27 +1,63 @@
-<form class="contact-form" id="contact-form">
-  <label for="name"> Name </label>
-  <input id="name" type="text" name="name" required />
+<form class="contact-form" id="contact-form" method="post">
+  <div class="inputContainer">
+    <label for="name"> Name </label>
+    <input id="name" type="text" name="name" />
+    <div class="error-message" id="name-error"></div>
+  </div>
 
-  <label for="email"> Email </label>
-  <input id="email" type="email" name="email" required />
+  <div class="inputContainer">
+    <label for="email"> Email </label>
+    <input id="email" type="email" name="email" />
+    <div class="error-message" id="email-error"></div>
+  </div>
 
-  <!-- <label for="subject"> Subject </label> -->
-  <!-- <input id="subject" type="text" name="subject" required /> -->
+  <div class="inputContainer">
+    <label for="subject"> Subject </label>
+    <input id="subject" type="text" name="subject" />
+    <div class="error-message" id="subject-error"></div>
+  </div>
 
-  <!-- <label for="message"> Message </label> -->
-  <!-- <textarea id="message" name="message" required> </textarea> -->
+  <div class="inputContainer">
+    <label for="message"> Message </label>
+    <textarea id="message" name="message"></textarea>
+    <div class="error-message" id="message-error"></div>
+  </div>
 
   <button class="contact-form-submit-btn" type="submit">Send</button>
 </form>
 
 <script>
-  import { actions } from "astro:actions";
+  import { actions, isInputError } from "astro:actions";
 
   const form = document.querySelector("#contact-form") as HTMLFormElement;
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const formData = new FormData(form);
-    const { data, error } = await actions.contactForm(formData);
-    console.log(data, error);
+    const formfields = new FormData(form);
+    const { error } = await actions.contactForm(formfields);
+    const inputs = Object.fromEntries(formfields.entries());
+
+    if (isInputError(error)) {
+      const errorFields = Object.keys(error.fields);
+      for (let input of Object.keys(inputs)) {
+        const errorInput = document.querySelector(`#${input}-error`);
+        console.log(error.fields["name"]);
+        if (errorInput) {
+          errorInput.textContent = error.fields[input] as string;
+          errorInput.classList.add("message-error");
+
+          if (!errorFields.includes(input)) {
+            console.log("I am here");
+            errorInput.textContent = "";
+            errorInput.classList.remove("message-error");
+          }
+        }
+      }
+    } else {
+      document.querySelectorAll(".error-message").forEach((item) => {
+        item.classList.remove("message-error");
+        item.textContent = "";
+      });
+    }
+    console.log("the end");
   });
 </script>
