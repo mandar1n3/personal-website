@@ -1,26 +1,26 @@
-<form class="contact-form" id="contact-form" method="post">
+<form class="contact-form" id="contact-form" method="POST">
   <div class="inputContainer">
     <label for="name"> Name </label>
     <input id="name" type="text" name="name" />
-    <div class="error-message" id="name-error"></div>
+    <p class="error-field" id="name-error"></p>
   </div>
 
   <div class="inputContainer">
     <label for="email"> Email </label>
     <input id="email" type="email" name="email" />
-    <div class="error-message" id="email-error"></div>
+    <p class="error-field" id="email-error"></p>
   </div>
 
   <div class="inputContainer">
     <label for="subject"> Subject </label>
     <input id="subject" type="text" name="subject" />
-    <div class="error-message" id="subject-error"></div>
+    <p class="error-field" id="subject-error"></p>
   </div>
 
   <div class="inputContainer">
     <label for="message"> Message </label>
     <textarea id="message" name="message"></textarea>
-    <div class="error-message" id="message-error"></div>
+    <p class="error-field" id="message-error"></p>
   </div>
 
   <button class="contact-form-submit-btn" type="submit">Send</button>
@@ -29,35 +29,47 @@
 <script>
   import { actions, isInputError } from "astro:actions";
 
-  const form = document.querySelector("#contact-form") as HTMLFormElement;
+  const form = document.querySelector("#contact-form");
+
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const formfields = new FormData(form);
-    const { error } = await actions.contactForm(formfields);
-    const inputs = Object.fromEntries(formfields.entries());
+    const formData = new FormData(form as HTMLFormElement);
+
+    const { data, error } = await actions.contactForm(formData);
 
     if (isInputError(error)) {
-      const errorFields = Object.keys(error.fields);
-      for (let input of Object.keys(inputs)) {
-        const errorInput = document.querySelector(`#${input}-error`);
-        console.log(error.fields["name"]);
-        if (errorInput) {
-          errorInput.textContent = error.fields[input] as string;
-          errorInput.classList.add("message-error");
+      error.fields.name
+        ? renderErrorMessage("name", error.fields.name.join(","))
+        : clearErrorMessage("name");
 
-          if (!errorFields.includes(input)) {
-            console.log("I am here");
-            errorInput.textContent = "";
-            errorInput.classList.remove("message-error");
-          }
-        }
-      }
-    } else {
-      document.querySelectorAll(".error-message").forEach((item) => {
-        item.classList.remove("message-error");
-        item.textContent = "";
-      });
+      error.fields.subject
+        ? renderErrorMessage("subject", error.fields.subject.join(","))
+        : clearErrorMessage("subject");
+
+      error.fields.email
+        ? renderErrorMessage("email", error.fields.email.join(","))
+        : clearErrorMessage("email");
+
+      error.fields.message
+        ? renderErrorMessage("message", error.fields.message.join(","))
+        : clearErrorMessage("message");
     }
-    console.log("the end");
+
   });
+
+  function renderErrorMessage(id: string, msg: string) {
+    const element = document.querySelector(`#${id}-error`);
+    if (element) {
+      element.classList.add("message-error");
+      element.textContent = msg;
+    }
+  }
+
+  function clearErrorMessage(id: string) {
+    const element = document.querySelector(`#${id}-error`);
+    if (element) {
+      element.classList.remove("message-error");
+      element.textContent = "";
+    }
+  }
 </script>

@@ -216,12 +216,17 @@ textarea:not([rows]) {
     display: none;
   }
 }
-.message-error {
+
+.error-field  {
+  padding: unset;
+  margin: unset;
+  display: none;
+}
+.error-field.message-error {
   padding: .8em;
   background-color: oklch(88.5% 0.062 18.334);
   display: block;
   border-left: .3em solid oklch(57.7% 0.245 27.325);
   font-size: var(--xx-small)
 }
-
 
